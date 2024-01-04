@@ -1,0 +1,22 @@
+.data {
+    padding: 40px;
+    color: #fff;
+}
+
+.data span {
+    display: block;
+    margin-top: 25px;
+
+}
+
+.data span:first-child {
+    font-size: 64px;
+    letter-spacing: 15px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.data p {
+    font-size: 18px;
+    letter-spacing: 3px;
+    font-weight: lighter;
+}

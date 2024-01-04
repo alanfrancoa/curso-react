@@ -1,10 +1,11 @@
 import './App.css'
 import Barra from './components/Barra'
+import Data from './components/Data'
 function App() {
   return (
     <>
       <Barra/>
-      <div>hola</div>
+      <Data />
       <Barra/>
     </>
   )
