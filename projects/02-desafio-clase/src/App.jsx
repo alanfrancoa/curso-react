@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react"
 import './App.css'
-import Card from "./assets/components/Card"
+import AddressCard from "./components/AddressCard"
+import Card from "./components/Card"
+import CompanyCard from "./components/CompanyCard"
 
 function App() {
   const [IDBuscado, setIDBuscado] = useState()
@@ -37,7 +39,11 @@ function App() {
       {user.id !== undefined && (
         <div>
           <h4>{`Datos encontrados sobre usuario-id: ${user.id}`}</h4>
+          <div className="user-info">
           <Card user={user} />
+          <AddressCard address={user.address} />
+          <CompanyCard company={user.company} />
+          </div>
         </div>
       )}
     </div>
