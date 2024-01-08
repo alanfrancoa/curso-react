@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import './App.css'
+import Card from "./assets/components/Card"
 
 function App() {
   const [IDBuscado, setIDBuscado] = useState()
@@ -14,7 +15,10 @@ function App() {
           console.log(userData);
         })
         .catch(error => console.error(error));
-    }
+    } else 
+      {
+        setUser({})
+      }
   }, [IDBuscado])
 
 
@@ -34,6 +38,7 @@ function App() {
       {user.id !== undefined && (
         <div>
           <h4>{`Datos encontrados sobre usuario-id: ${user.id}`}</h4>
+          <Card user={user}/>
         </div>
       )}
     </div>
