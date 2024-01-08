@@ -15,10 +15,9 @@ function App() {
           console.log(userData);
         })
         .catch(error => console.error(error));
-    } else 
-      {
-        setUser({})
-      }
+    } else {
+      setUser({})
+    }
   }, [IDBuscado])
 
 
@@ -38,7 +37,7 @@ function App() {
       {user.id !== undefined && (
         <div>
           <h4>{`Datos encontrados sobre usuario-id: ${user.id}`}</h4>
-          <Card user={user}/>
+          <Card user={user} />
         </div>
       )}
     </div>
