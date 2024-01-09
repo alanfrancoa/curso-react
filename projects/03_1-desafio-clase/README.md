@@ -1,8 +1,15 @@
-# React + Vite
+# Ejercicio 1
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+En esta ocasión, debes hacer una aplicación React que liste el nombre y el email de todos los usuarios de:
+https://jsonplaceholder.typicode.com/users.
 
-Currently, two official plugins are available:
+Paso a paso
+1. Crea un componente para contener la lista de los usuarios.
+2. Crea una porción del estado para la lista de los usuarios.
+3. Gestiona la comunicación a la API según el tipo de componente que elijas (useEffect / componentDidMount).
+4. En el render de tu componente, renderiza la lista de usuarios. Puedes renderizar un div por usuario, mostrando el name y el email de dicho usuario.
+5. No olvides el atributo key.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Consideraciones
+● Recuerda todo lo aprendido sobre el ciclo de vida para la llamada de API.
+● Puedes elegir usar el tipo de componente quq quieras.

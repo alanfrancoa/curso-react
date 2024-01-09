@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import './App.css'
+import UsersList from './components/UsersList'
 
 function App() {
   const [users, setUsers] = useState({})
@@ -18,6 +19,9 @@ function App() {
   return (
     <div>
       <h2>Listado de usuarios:</h2>
+      <hr />
+      <UsersList users={users}/>
+
     </div>
   )
 }

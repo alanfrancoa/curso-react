@@ -1,0 +1,12 @@
+.list{
+    border: 1px solid #fff;
+    border-radius: 8px;
+    margin: 8px;
+}
+.itemList{
+    border: 1px solid #fff;
+}
+.itemList span{
+    margin:8px;
+
+}
