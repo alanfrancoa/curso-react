@@ -1,0 +1,19 @@
+.post-list{
+    border: 1px solid white;
+    border-radius: 8px;
+    margin: 4px;
+    padding: 4px;
+}
+
+.item-list{
+    border: 1px solid white;
+    margin: 2px;
+}
+
+.info-post span{
+    margin: 4px;
+}
+.title-post{
+    border-bottom: 1px solid white;
+}
+
