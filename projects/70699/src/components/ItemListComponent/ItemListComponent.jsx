@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types'
 import './ItemListComponent.css'
+import ItemCount from '../ItemCount/ItemCount'
+
 const ItemListComponent = ({losSimpsons}) => {
 
   return (
@@ -11,6 +13,7 @@ const ItemListComponent = ({losSimpsons}) => {
                <div className="card-body ">
                <h5 className="card-title">Nombre: {nombre}</h5>
                  <p className="card-text">Descripcion: {description}</p>
+                 <ItemCount />
                </div>
              </div>
             ))

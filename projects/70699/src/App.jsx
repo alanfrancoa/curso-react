@@ -1,7 +1,7 @@
 import './App.css'
 import ItemCount from './components/ItemCount/ItemCount'
 import ItemListComponent from './components/ItemListComponent/ItemListComponent'
-
+import Poke from './components/Pokedex/Poke'
 function App() {
   const losSimpsons= [
     {
@@ -46,7 +46,7 @@ function App() {
     <div>
       <h1>Hola Mundo!</h1>
       <ItemListComponent losSimpsons={losSimpsons}/>
-      <ItemCount />
+      <Poke />
     </div>
 
     
