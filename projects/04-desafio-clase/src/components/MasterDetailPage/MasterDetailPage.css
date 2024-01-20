@@ -1,0 +1,29 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+h1 {
+    text-align: center;
+    margin: 0 auto; /* Centrar horizontalmente */
+}
+
+.items {
+    width: 400px;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    padding: 4px;
+    margin: 4px;
+    text-align: center;
+    border: 1px black solid;
+}
+
+.tarjeta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

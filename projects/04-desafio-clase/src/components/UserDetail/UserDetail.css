@@ -1,0 +1,13 @@
+h2{
+    text-align: center;
+}
+.tarjeta{
+    width: 400px;
+    justify-content: center;
+    flex-wrap: wrap;
+    border-radius: 5px;
+    padding: 4px;
+    margin: 4px;
+    text-align: center;
+    margin: 4px;
+}
