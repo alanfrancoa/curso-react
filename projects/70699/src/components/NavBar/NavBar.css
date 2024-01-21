@@ -1,0 +1,14 @@
+nav{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 10px;
+    font-size: large;
+    background-color: rgb(72, 104, 76);
+}
+
+nav > .link{
+    color: rgb(255, 255, 255);
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-decoration: none;
+}
