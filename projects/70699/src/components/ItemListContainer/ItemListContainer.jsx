@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import './ItemListContainer.css'
-import ItemCount from '../ItemCount/ItemCount'
+import ItemList from '../ItemList/ItemList'
 import { pedirProductos } from '../../helpers/pedirProductos'
 
 
@@ -23,24 +23,10 @@ const ItemListContainer = () => {
 
   return (
     <>
-      <h1>Lista de Productos</h1>
-      <hr />
-
       <div className="tarjeta">
         {loading
           ? <div className='spinner'> <span className="spinner-grow spinner-grow-l" aria-hidden="true"></span></div>
-          : productos.map(productos => (
-            <div className='card' key={productos.id}>
-              < img src={productos.photo} alt={productos.description} />
-              <h2> {productos.description}</h2>
-              <i>{productos.category}</i>
-              <b>Precio: ${productos.price}</b>
-              <div className='contador'>
-                <ItemCount />
-              </div>
-              <p>Stock: {productos.stock} unidades</p>
-            </div>
-          ))}
+          : <ItemList productos={productos}/>}
       </div>
     </>
   )
