@@ -6,6 +6,8 @@ import {
   Route
 } from 'react-router-dom'
 import CheckOut from './components/CheckOut/CheckOut'
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
+import CartScreen from './components/CartScreen/CartScreen'
 
 function App() {
 
@@ -16,7 +18,9 @@ function App() {
         <Routes>
           <Route exact path='/' element={<ItemListContainer />} />
           <Route exact path='/productos/:categoryId' element={<ItemListContainer/>}/>
+          <Route exact path='/detail/:itemId' element={<ItemDetailContainer/>}/>
           <Route exact path='/check' element={<CheckOut />} />
+          <Route exact path='/cart' element={<CartScreen />} />
         </Routes>
       </Router>
     </div>
