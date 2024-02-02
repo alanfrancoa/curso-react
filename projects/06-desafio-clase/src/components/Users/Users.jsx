@@ -1,5 +1,6 @@
-import {useEffect} from 'react'
+import { useEffect } from 'react'
 import useJHP from '../../hooks/useJHP'
+import './Users.css'
 
 const Users = () => {
     const { data, error, callApi } = useJHP('/users')
@@ -14,7 +15,15 @@ const Users = () => {
             <hr />
             {error && <p>{error}</p>}
             {data.map(item => (
-                <li key={item.id}>{item.name}</li>
+                <div key={item.id} className='card'>
+                    <div className='head'>
+                        <h4>Nombre: {item.name}</h4>
+                    </div>
+                    <div className='body'>
+                        <span>Username: {item.username}</span>
+                        <span>e-mail: {item.email}</span>
+                    </div>
+                </div>
             ))}
         </div>
     )

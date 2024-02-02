@@ -1,0 +1,16 @@
+.card{
+    border: 1px solid black;
+    margin: 4px;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.head{
+    text-align: center;
+}
+
+.body{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

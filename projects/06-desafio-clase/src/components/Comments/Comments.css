@@ -1,0 +1,11 @@
+.card{
+    border: 1px solid black;
+    margin: 4px;
+    padding: 8px;
+    border-radius: 8px;
+}
+.head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
