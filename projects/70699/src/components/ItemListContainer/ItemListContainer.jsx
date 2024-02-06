@@ -3,19 +3,15 @@ import './ItemListContainer.css'
 import ItemList from '../ItemList/ItemList'
 import { pedirProductos } from '../../helpers/pedirProductos'
 import { useParams } from 'react-router-dom'
-import { DarkModeContext } from '../context/DarkModeProvider';
+
 
 const ItemListContainer = () => {
-   const {isDarkMode, toggleDarkMode} = useContext(DarkModeContext)
+   
 
   const [productos, setProductos] = useState([])
   const [loading, setLoading] = useState(false)
   const { categoryId } = useParams()
 
-  const style = {
-    background: isDarkMode ? '#333' : '#fff',
-    color: isDarkMode ? '#fff' : '#333'
-  }
 
   useEffect(() => {
     setLoading(true)
@@ -36,9 +32,9 @@ const ItemListContainer = () => {
 
   return (
     <>
-      <div className="tarjeta" style={style}>
-        <p>Modo oscuro: {isDarkMode ? 'Activado' : 'Desactivado'}</p>
-        <button onClick={toggleDarkMode}>Switch</button>
+      <div className="tarjeta" >
+       
+        
         {loading
           ? <div className='spinner'> <span className="spinner-grow spinner-grow-l" aria-hidden="true"></span></div>
           : <ItemList productos={productos}/>}

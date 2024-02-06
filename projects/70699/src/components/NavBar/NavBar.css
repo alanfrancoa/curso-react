@@ -12,3 +12,13 @@ nav > .link{
     font-family:Verdana, Geneva, Tahoma, sans-serif;
     text-decoration: none;
 }
+
+.btnBt{
+    height: 25px;
+    width: auto;
+}
+
+.btnBt:hover{
+    transition: 0.5s;
+    transform: scale(2, 2);
+}
