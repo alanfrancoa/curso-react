@@ -48,7 +48,7 @@ const CartScreen = () => {
                                             <p>${prod.price}</p>
                                         </td>
                                         <td>
-                                            <button><FaRegTrashCan onClick={removeItem}/></button>
+                                            <FaRegTrashCan onClick={() => removeItem(prod.id)}/>
                                         </td>
 
                                     </tr>

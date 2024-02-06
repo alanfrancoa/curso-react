@@ -25,7 +25,7 @@ const ItemDetailContainer = () => {
       }, [itemId])
 
   return (
-    <div className='tarjeta'>
+    <div >
         {
             loading ? <div className='spinner'><span className="spinner-grow spinner-grow-l" aria-hidden="true"></span></div>
             : <ItemDetail {...item}/>

@@ -32,8 +32,7 @@ const ItemListContainer = () => {
 
   return (
     <>
-      <div className="tarjeta" >
-       
+      <div className='contenedor'>
         
         {loading
           ? <div className='spinner'> <span className="spinner-grow spinner-grow-l" aria-hidden="true"></span></div>
