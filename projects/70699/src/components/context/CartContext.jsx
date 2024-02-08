@@ -32,28 +32,34 @@ export const CartProvider = ({children}) => {
         const newItem = carrito.filter((prod)=> prod.id !== itemId)
         setCarrito(newItem)
         Swal.fire({
-            title: "Estas seguro?",
-            text: "Esto no puede revertirse!",
             icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Si, eliminar el producto del carrito!"
-          }).then((result) => {
-            if (result.isConfirmed) {
-              Swal.fire({
-                title: "Eliminado!",
-                text: "El producto se ha eliminado de tu compra.",
-                icon: "success"
-              });
-            }
+            title: "Item eliminado",
+            text: "Producto eliminado satisfactoriamente.",
           });
-
+    }
+    const vaciarCarrito = () => {
+        setCarrito([])
+        Swal.fire({
+            icon: "warning",
+            title: "Carrito limpio",
+            text: "Se han eliminado los productos de su carrito.",
+          });
+    }
+    const modifyItem = (itemId, newCantidad) => {
+        console.log(`ItemID: ${itemId}, newCantidad: ${newCantidad}`)
+        const updateCarrito = carrito.map((prod)=>{
+            if (prod.id === itemId)
+            {return {...prod, counter: newCantidad}}
+            return prod
+        })
+        setCarrito(updateCarrito)
     }
     return (
         <CartContext.Provider value={{
             precioTotal,
             removeItem,
+            modifyItem,
+            vaciarCarrito,
             carrito,
             addToCart,
             calcularCantidad

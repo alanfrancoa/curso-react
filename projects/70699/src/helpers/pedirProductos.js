@@ -7,6 +7,6 @@ export const pedirProductos = () => {
             resolve(stock)
             reject("Rechazado")
 
-        }, 1000)
+        }, 500)
     })
 }
