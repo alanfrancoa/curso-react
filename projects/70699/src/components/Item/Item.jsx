@@ -10,7 +10,7 @@ const Item = ({id, name, category, price, photo, description}) => {
             <h4>{description}</h4>
             <p>{category}</p>
             {/* <h4>{name}</h4>*/}
-            <p>Precio: ${price}</p>
+            <p>Precio: {price.toLocaleString('es-AR', {style: 'currency', currency:'ARS'})}</p>
             <div className='contador'>
                 <Link className='btn btn-info m-1' to={`/detail/${id}`}>Ver mas detalles</Link>
             </div>

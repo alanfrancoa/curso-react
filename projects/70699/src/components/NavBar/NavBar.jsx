@@ -11,7 +11,6 @@ const NavBar = ({toggleDarkMode}) => {
         <Link className='link' to='/productos/tecnologia'>Tecnologia</Link>
         <Link className='link' to='/productos/ropa'>Ropa</Link>
         <Link className='link' to='/productos/musica'>Musica</Link>
-        <Link className='link' to='/check'>CheckOut</Link>
         <Link className='link' to='/cart'><Cart /></Link>
         <CiDark className='btnBt' onClick={toggleDarkMode}  />
         

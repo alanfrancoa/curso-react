@@ -24,7 +24,7 @@ const ItemDetail = ({ id, name, description, price, photo, category, stock }) =>
             photo, 
             price, 
             category,
-            counter
+            counter, stock,
         }
         addToCart(newItem)
         Swal.fire({
