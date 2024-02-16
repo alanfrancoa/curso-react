@@ -1,30 +1,36 @@
-import React from 'react'
-import './App.css'
-import Header from './components/Header.jsx'
-import Email from './components/Email.jsx'
-import { useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import { addUser } from './redux/userSlice'
+import React from 'react';
+import './App.css';
+import Header from './components/Header.jsx';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux'; // Importar también useSelector
+import { addProduct } from './redux/productSlice';
 
 function App() {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+
+  // Agregar useSelector para acceder al estado Redux
+  const products = useSelector(state => state.products);
 
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/users/2")
-    .then((res)=> res.json())
-    .then((data)=> dispatch(addUser(data)))
-    .catch((err)=> console.log(err))
-  }, [])
-  
-  
+    const data = {
+      ID: 32,
+      description: "Toallitas",
+      stock: 20,
+      price: 70.32,
+    }
+    dispatch(addProduct(data));
+
+    // Imprimir el estado Redux en la consola después de despachar la acción
+    console.log("Estado Redux después de agregar el producto:", products);
+  }, []);
+
   return (
     <div>
       <h1>Desafio nro 7:</h1>
       <hr />
       <Header />
-      <Email />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
