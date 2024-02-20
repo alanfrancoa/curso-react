@@ -2,13 +2,14 @@ import {Link} from 'react-router-dom'
 import {useContext, useState} from 'react'
 import { CartContext } from '../context/CartContext'
 import Swal from 'sweetalert2'
+import './CheckOut.css'
 
 const CheckOut = ({}) => {
 
   const [ordenId, setOrdenId] = useState('')
-  
-  const {vaciarCarrito} = useContext(CartContext)
 
+  const {vaciarCarrito} = useContext(CartContext)
+  const [modalVisible, setModalVisible] = useState(false)
   const [formData, setFormData] = useState({
     email: '',
     nombre: '',
@@ -20,12 +21,8 @@ const CheckOut = ({}) => {
     //Generamos un num random para simular el id de orden.
     const randomID = Math.floor(Math.random()*1000000)
     setOrdenId(randomID)
-    setFormData({
-      email: '',
-    nombre: '',
-    apellido: '',
-    telefono: '',
-    })
+    setModalVisible(true)
+    
   }
 
   const handleSubmit = (e) => {
@@ -33,7 +30,7 @@ const CheckOut = ({}) => {
     //ejecuta la funcion de generar un ID de Orden
     generarOrden()
     //Ejecuta la funcion de limpiar carrito, traida del contexto.
-    vaciarCarrito()
+    
     Swal.fire({
       position: "top-end",
       icon: "success",
@@ -47,6 +44,20 @@ const CheckOut = ({}) => {
     const {name, value} = e.target
     setFormData({...formData,
     [name]: value})
+  }
+
+  const closeModal = () => {
+    setModalVisible(false)
+
+    setOrdenId('')
+
+    setFormData({
+      email: '',
+      nombre: '',
+      apellido: '',
+      telefono: '',
+    })
+    vaciarCarrito()
   }
 
   return (
@@ -77,9 +88,13 @@ const CheckOut = ({}) => {
       </form>
       {
         ordenId && (
-          <div className='mt-4'>
-            <h5>Orden generada con exito!</h5>
+          <div className={`mt-4 text-center`}>
+            <h5>{formData.nombre} hemos generado tu orden con exito!</h5>
             <p>Numero de orden: {ordenId}</p>
+            <i>Detalles enviados a: {formData.email}</i>
+            <div className='d-grid gap-2 col-6 mx-auto'>
+            <button className='btn btn-danger text-center' onClick={closeModal}>Cerrar</button>
+            </div>
           </div>
         )
       }
