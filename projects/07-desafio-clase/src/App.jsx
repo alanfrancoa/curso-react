@@ -1,30 +1,34 @@
-import { useEffect } from "react";
-import { useDispatch } from "react-redux";
-import { addProduct } from "./redux/userSlice";
-import { Header } from "./components/Header";
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addProducts } from './redux/arraySlice';
 
-import "./App.css";
-
-function App() {
+const App = () => {
   const dispatch = useDispatch();
+  const productos = useSelector(state => state.array.products); 
 
-  useEffect(() => {
-    const data = {
+  const agregarProductoHandler = () => {
+    const producto = {
       ID: 1,
       description: "toallitas",
       price: 200,
       stock: 20,
     }
-    dispatch(addProduct(data))
 
-  }, []);
+    dispatch(addProducts(producto));
+  };
 
+  console.log(productos);
+  
   return (
-    <div className="App">
-      <Header />
-     
+    <div>
+      <button onClick={agregarProductoHandler}>Agregar producto</button>
+      <ul>
+        {productos && productos.map((producto, index) => (
+          <li key={index}>Producto: {producto.description}</li>
+        ))}
+      </ul>
     </div>
   );
-}
+};
 
 export default App;
