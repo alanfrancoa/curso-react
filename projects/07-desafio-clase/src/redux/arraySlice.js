@@ -14,8 +14,12 @@ export const arraySlice = createSlice({
             products: [...state.products, action.payload]
         };
     },
+    removeProductById: (state, action) => {
+      const productId = action.payload;
+      state.products = state.products.filter(product => product.ID !== productId);
+  }
   },
 });
 
-export const { addProducts} = arraySlice.actions;
+export const { addProducts, removeProductById} = arraySlice.actions;
 export default arraySlice.reducer;

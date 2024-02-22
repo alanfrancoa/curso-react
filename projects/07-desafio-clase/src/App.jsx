@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addProducts } from './redux/arraySlice';
 import { useState } from 'react';
+import DeleteProduct from './components/DeleteProduct';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -53,7 +54,7 @@ const App = () => {
     };
   
     dispatch(addProducts(producto));
-    
+
     // Reinicia los estados después de agregar el producto
     setID('');
     setDescription('');
@@ -64,6 +65,7 @@ const App = () => {
 
   return (
     <div>
+      <h3>Agregue un producto:</h3>
       <form onSubmit={agregarProductoHandler}>
         <input type="number" placeholder='Ingrese ID' id="ID" name="ID" value={ID} onChange={handleIDChange} />
         <input type="text" placeholder='Ingrese descripción' value={description} onChange={handleDescriptionChange}/>
@@ -72,11 +74,17 @@ const App = () => {
         <button type='submit'>Agregar producto</button>
       </form>
       {error && <p style={{ color: 'red' }}>{error}</p>}
+      <DeleteProduct />
       <h2>Lista de productos: </h2>
       <hr />
       <ul>
         {productos && productos.map((producto, index) => (
-          <li key={index}>Producto: {producto.description}</li>
+          <li key={index}>
+            <h5>ID: {producto.ID} </h5>
+            <p>Producto: {producto.description}</p>
+            <p>Precio: {producto.price.toLocaleString('es-AR', { style: 'currency', currency: 'ARS' })}</p>
+            <p>Stock: {producto.stock} unidades</p>
+          </li>
         ))}
       </ul>
     </div>
